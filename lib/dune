@@ -1,0 +1,12 @@
+(library
+ (name charset)
+ (public_name charset)
+ (wrapped false)
+ (libraries (select charset_bitops.ml from
+                    (ocaml_intrinsics  -> charset_bitops.intrinsics.ml)
+                    (!ocaml_intrinsics -> charset_bitops.ocaml.ml))
+            (select charset_bitops.mli from
+                    (ocaml_intrinsics  -> charset_bitops.intrinsics.mli)
+                    (!ocaml_intrinsics -> charset_bitops.ocaml.mli)))
+ (modules charset charset_bitops)
+ (synopsis "fast stdlib-compatible char set"))
