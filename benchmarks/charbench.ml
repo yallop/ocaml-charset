@@ -248,6 +248,7 @@ struct
   module C = Stdlib.Set.Make(Char)
   (* inefficient version for pre-4.12 compatibility *)
   let[@ocaml.warning "-32"] to_rev_seq s = List.to_seq (List.rev (C.elements s))
+  let[@ocaml.warning "-32"] to_list = C.elements
   include C
 end
 module Stdtests = Common(Stdlib_CharSet)

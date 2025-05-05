@@ -8,3 +8,4 @@
 include Set.S with type elt = char
 
 val to_rev_seq : t -> elt Seq.t
+val to_list : t -> elt list
