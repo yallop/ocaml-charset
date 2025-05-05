@@ -41,7 +41,7 @@ BENCHMARKS=isempty              \
            add-seq              \
            of-seq
 
-BENCHARGS=-quota 0.2 -ascii -display blank -clear-columns time
+BENCHARGS=-quota 0.2 -display blank -clear-columns time
 
 all:
 	dune build -p charset

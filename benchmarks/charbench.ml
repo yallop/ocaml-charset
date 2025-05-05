@@ -264,7 +264,7 @@ let group name f g =
   ])
 
 let () =
-  Core.Command.run
+  Command_unix.run
     (Core.Command.group ~summary:"char benchmarks"
        [group "isempty" Stdtests.is_empty Ourtests.is_empty;
         group "mem" Stdtests.mem Ourtests.mem;
