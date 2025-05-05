@@ -248,6 +248,7 @@ struct
   module C = Stdlib.Set.Make(Char)
   (* inefficient version for pre-4.12 compatibility *)
   let[@ocaml.warning "-32"] to_rev_seq s = List.to_seq (List.rev (C.elements s))
+  let[@ocaml.warning "-32"] to_list = C.elements
   include C
 end
 module Stdtests = Common(Stdlib_CharSet)
@@ -263,7 +264,7 @@ let group name f g =
   ])
 
 let () =
-  Core.Command.run
+  Command_unix.run
     (Core.Command.group ~summary:"char benchmarks"
        [group "isempty" Stdtests.is_empty Ourtests.is_empty;
         group "mem" Stdtests.mem Ourtests.mem;

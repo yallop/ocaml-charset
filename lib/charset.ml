@@ -495,3 +495,4 @@ let of_seq seq =
   s
 
 let to_rev_seq s = fun () -> to_rev_seq_from_option s (last s)
+let to_list = elements
