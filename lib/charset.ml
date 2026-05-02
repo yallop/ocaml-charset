@@ -171,6 +171,9 @@ let diff l r = [| l.!(0) land lnot (r.!(0));
 let cardinal s =
   popcnt s.!(0) + popcnt s.!(1) + popcnt s.!(2) + popcnt s.!(3) + popcnt s.!(4)
 
+let is_singleton s =
+  cardinal s = 1
+
 let disjoint l r =
   (l.!(0) land r.!(0)) = 0 &&
   (l.!(1) land r.!(1)) = 0 &&
